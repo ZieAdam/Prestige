@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Page de Vote{% endblock %}
+{% block header %}Votez pour les candidats{% endblock %}
+{% block content %}
+<div class="card shadow-lg p-4">
+    <form action="{{ url_for('vote', juge_id=juge_id) }}" method="POST">
+        {% for candidat in candidats %}
+        <div class="mb-3">
+            <h3>{{ candidat.nom }}</h3>
+            <label for="volonte_{{ candidat.id }}">Volonté de rejoindre la famille (sur 30)</label>
+            <input type="number" min="0" max="30" name="volonte_{{ candidat.id }}" class="form-control mb-2">
+            
+            <label for="connaissance_{{ candidat.id }}">Connaissance de la famille (sur 25)</label>
+            <input type="number" min="0" max="25" name="connaissance_{{ candidat.id }}" class="form-control mb-2">
+            
+            <label for="prestation_{{ candidat.id }}">Prestation et présentation (sur 25)</label>
+            <input type="number" min="0" max="25" name="prestation_{{ candidat.id }}" class="form-control mb-2">
+            
+            <label for="appreciation_{{ candidat.id }}">Appréciation personnelle (sur 20)</label>
+            <input type="number" min="0" max="20" name="appreciation_{{ candidat.id }}" class="form-control mb-4">
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary btn-block">Soumettre le vote</button> <!-- Ajouté btn-block ici -->
+    </form>
+</div>
+{% endblock %}

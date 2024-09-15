@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter des Candidats</title>
+</head>
+<body>
+    <h1>Ajouter des Candidats</h1>
+    <form method="post">
+        <input type="text" name="candidat_nom" placeholder="Nom du candidat" required>
+        <button type="submit">Ajouter Candidat</button>
+    </form>
+    <ul>
+        {% for candidat in candidats %}
+            <li>{{ candidat.nom }}</li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="{{ url_for('ajouter_criteres') }}">Passer à l'ajout des critères</a>
+</body>
+</html>

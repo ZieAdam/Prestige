@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Résultats du Vote{% endblock %}
+{% block header %}Résultats des Candidats{% endblock %}
+{% block content %}
+<div class="card shadow-lg p-4">
+    <div class="table-responsive"> <!-- Ajouté ici -->
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nom du Candidat</th>
+                    <th>Score Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for resultat in resultats %}
+                <tr>
+                    <td>{{ resultat.nom }}</td>
+                    <td>{{ resultat.score_total }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

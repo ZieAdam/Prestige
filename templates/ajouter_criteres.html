@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter des Critères</title>
+</head>
+<body>
+    <h1>Ajouter des Critères</h1>
+    <form method="post">
+        <input type="text" name="critere_nom" placeholder="Nom du critère" required>
+        <button type="submit">Ajouter Critère</button>
+    </form>
+    <ul>
+        {% for critere in criteres %}
+            <li>{{ critere }}</li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="{{ url_for('voter') }}">Passer au vote</a>
+</body>
+</html>

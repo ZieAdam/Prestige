@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Voter</title>
+</head>
+<body>
+    <h1>Voter</h1>
+    <form method="post">
+        {% for candidat in candidats %}
+            <h2>{{ candidat.nom }}</h2>
+            {% for critere in criteres %}
+                <label>{{ critere }}:</label>
+                <input type="number" name="{{ candidat.nom }}_{{ critere }}" min="0" max="10" required>
+                <br>
+            {% endfor %}
+        {% endfor %}
+        <button type="submit">Enregistrer les votes</button>
+    </form>
+</body>
+</html>

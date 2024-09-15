@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultats</title>
+</head>
+<body>
+    <h1>Résultats des candidats</h1>
+    <ul>
+        {% for candidat in candidats %}
+        <li>{{ candidat.nom }}: Score total: {{ candidat.score_total }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Retour à l'accueil</a>
+</body>
+</html>

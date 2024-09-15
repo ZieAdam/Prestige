@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Inscription Juge{% endblock %}
+{% block header %}Inscription pour les Juges{% endblock %}
+{% block content %}
+<div class="card shadow-lg p-4">
+    <form action="{{ url_for('juge_inscription') }}" method="POST">
+        <div class="mb-3">
+            <label for="nom">Nom du juge</label>
+            <input type="text" name="nom" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">S'inscrire</button> <!-- Ajouté btn-block ici -->
+    </form>
+</div>
+{% endblock %}

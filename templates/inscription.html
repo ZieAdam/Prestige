@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inscription des Candidats</title>
+</head>
+<body>
+    <h1>Inscription des Candidats</h1>
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <p>{{ form.nom.label }} {{ form.nom() }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    {% for message in get_flashed_messages() %}
+    <p>{{ message }}</p>
+    {% endfor %}
+</body>
+</html>

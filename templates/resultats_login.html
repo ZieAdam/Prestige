@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Accès aux Résultats{% endblock %}
+{% block header %}Accès Administrateur{% endblock %}
+{% block content %}
+<div class="card shadow-lg p-4">
+    <form action="{{ url_for('resultats') }}" method="POST">
+        <div class="mb-3">
+            <label for="mot_de_passe">Mot de passe</label>
+            <input type="password" name="mot_de_passe" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Se connecter</button>
+    </form>
+</div>
+{% endblock %}
